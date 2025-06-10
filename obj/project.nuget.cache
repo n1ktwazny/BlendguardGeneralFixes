@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "eAb300hf4+Y=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Laptop\\OneDrive\\Dokumenty\\GitHub\\BlenderGuardRebalance\\BlendguardGeneralFixes\\BlendguardGeneralFixes.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Laptop\\.nuget\\packages\\microsoft.netframework.referenceassemblies\\1.0.2\\microsoft.netframework.referenceassemblies.1.0.2.nupkg.sha512",
+    "C:\\Users\\Laptop\\.nuget\\packages\\microsoft.netframework.referenceassemblies.net471\\1.0.2\\microsoft.netframework.referenceassemblies.net471.1.0.2.nupkg.sha512"
+  ],
+  "logs": []
+}

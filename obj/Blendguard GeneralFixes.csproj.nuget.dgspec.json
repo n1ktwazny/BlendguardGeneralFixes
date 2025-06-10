@@ -1,0 +1,53 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\Laptop\\OneDrive\\Dokumenty\\GitHub\\BlenderGuardRebalance\\Blendguard GeneralFixes\\Blendguard GeneralFixes.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\Laptop\\OneDrive\\Dokumenty\\GitHub\\BlenderGuardRebalance\\Blendguard GeneralFixes\\Blendguard GeneralFixes.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Laptop\\OneDrive\\Dokumenty\\GitHub\\BlenderGuardRebalance\\Blendguard GeneralFixes\\Blendguard GeneralFixes.csproj",
+        "projectName": "Blendguard GeneralFixes",
+        "projectPath": "C:\\Users\\Laptop\\OneDrive\\Dokumenty\\GitHub\\BlenderGuardRebalance\\Blendguard GeneralFixes\\Blendguard GeneralFixes.csproj",
+        "packagesPath": "C:\\Users\\Laptop\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Laptop\\OneDrive\\Dokumenty\\GitHub\\BlenderGuardRebalance\\Blendguard GeneralFixes\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Laptop\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net471"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net471": {
+            "targetAlias": "net471",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net471": {
+          "targetAlias": "net471",
+          "dependencies": {
+            "Microsoft.NETFramework.ReferenceAssemblies": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[1.0.2, )",
+              "autoReferenced": true
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files (x86)\\dotnet\\sdk\\6.0.417\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

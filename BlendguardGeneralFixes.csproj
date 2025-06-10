@@ -1,0 +1,36 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Library</OutputType>
+    <TargetFramework>net471</TargetFramework>
+    <RootNamespace>Blendguard_GeneralFixes</RootNamespace>
+  </PropertyGroup>
+
+    <ItemGroup>
+  <Reference Include="UnityEngine">
+    <HintPath>lib/UnityEngine.dll</HintPath>
+  </Reference>
+  <Reference Include="UnityEngine.CoreModule">
+    <HintPath>lib/UnityEngine.CoreModule.dll</HintPath>
+  </Reference>
+  <Reference Include= "UnityEngine.PhysicsModule">
+    <HintPath>lib/UnityEngine.PhysicsModule.dll</HintPath>
+  </Reference>
+  <Reference Include= "UnityEngine.AIModule">
+    <HintPath>lib/UnityEngine.AIModule.ddl</HintPath>
+  </Reference>
+  <Reference Include= "UnityEngine.Unity.TextMeshPro">
+    <HintPath>lib/Unity.TextMeshPro.ddl</HintPath>
+  </Reference>
+  <Reference Include="BepInEx">
+    <HintPath>lib/BepInEx.dll</HintPath>
+  </Reference>
+  <Reference Include="0Harmony">
+    <HintPath>lib/0Harmony.dll</HintPath>
+  </Reference>
+  <Reference Include="Assembly-CSharp">
+    <HintPath>lib/Assembly-CSharp.dll</HintPath>
+  </Reference>
+  
+  </ItemGroup>
+
+</Project>
