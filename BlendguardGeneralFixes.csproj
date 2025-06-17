@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <OutputType>Library</OutputType>
-    <TargetFramework>net471</TargetFramework>
+    <TargetFramework>netstandard2.1</TargetFramework>
     <RootNamespace>Blendguard_GeneralFixes</RootNamespace>
   </PropertyGroup>
 
@@ -18,8 +18,8 @@
   <Reference Include= "UnityEngine.AIModule">
     <HintPath>lib/UnityEngine.AIModule.ddl</HintPath>
   </Reference>
-  <Reference Include= "UnityEngine.Unity.TextMeshPro">
-    <HintPath>lib/Unity.TextMeshPro.ddl</HintPath>
+  <Reference Include= "UnityEngine.UI">
+    <HintPath>lib/UnityEngine.UI.ddl</HintPath>
   </Reference>
   <Reference Include="BepInEx">
     <HintPath>lib/BepInEx.dll</HintPath>
