@@ -25,7 +25,7 @@ public class BGuardGeneralFixes : BaseUnityPlugin{
        
     private static readonly MethodInfo AssignAgentSpeedMethod = AccessTools.Method(typeof(Invader), "AssignAgentSpeed");
     void Awake(){
-        //DisableUi = Config.Bind("Debugging", "Disable UI Elements", false, "!! Disables all in-game UI elements (for like videos and stuff)!!");
+        DisableUi = Config.Bind("Debugging", "Disable UI Elements", false, "!! Disables all in-game UI elements after  (for like videos and stuff)!!");
         DisableEnemies = Config.Bind("Debugging", "Disable Enemies", false, "Overrides the spawning logic to stop enemies from spawning");
         //InfiniteMoney = Config.Bind("Debugging", "Infinite Money", false, "Well.. Infinite money.");
         enableScreenShake = Config.Bind("Player", "Screen shaking", false, "Toggles the annoying camera screen shake");
@@ -50,7 +50,7 @@ public class BGuardGeneralFixes : BaseUnityPlugin{
     // Change the Invader speed
     [HarmonyPatch(typeof(Invader), "AssignAgentSpeed")]
     [HarmonyPostfix]
-    static void AdditionalSpeed(Invader __instance){
+    static void SpeedCorector(Invader __instance){
         var enemyNav = AccessTools.Field(typeof(Invader), "_navMeshAgent").GetValue(__instance);
         NavMeshAgent navAgent = (NavMeshAgent)enemyNav;
            
@@ -90,6 +90,12 @@ public class BGuardGeneralFixes : BaseUnityPlugin{
             __instance.transform.position += __instance.transform.forward * _speed * Time.deltaTime;
         }
     }
+
+    //[HarmonyPatch(typeof(CurrencyManager), "RaiseCardCost")]
+    //[HarmonyPrefix]
+    //static void UIDisabler(){
+    //    
+    //}
     
     // Disable all screenshaking
     [HarmonyPatch(typeof(MainVC), "Start")]
@@ -99,6 +105,25 @@ public class BGuardGeneralFixes : BaseUnityPlugin{
             AccessTools.Field(typeof(MainVC), "_shakeMax").SetValue(__instance, 0f);
             AccessTools.Field(typeof(MainVC), "_lowerDistanceTreshold").SetValue(__instance, 0f);
             AccessTools.Field(typeof(MainVC), "_higherDistanceTreshold").SetValue(__instance, 0f);
+        }
+    }
+
+    //Cancel screenshake when it gets called
+    [HarmonyPatch(typeof(MainVC), "Skake")]
+    [HarmonyPrefix]
+    static bool CancelScreenshake(){
+        if (!enableScreenShake.Value){
+            return false;
+        }
+        return true;
+    }
+    
+    //Disable UI on tower kill
+    [HarmonyPatch(typeof(StructureEliminator), "EliminateStructure")]
+    [HarmonyPrefix]
+    static void DisableUiOnKill(){
+        if (DisableUi.Value){
+            Destroy(MonoSingleton<UIManager>.Instance);
         }
     }
 
@@ -112,16 +137,15 @@ public class BGuardGeneralFixes : BaseUnityPlugin{
         }
         return true;
     }
-
     
-    [HarmonyPatch(typeof(UIManager), "Start")]
-    [HarmonyPrefix]
-    static void UIOverride(UIManager __instance){
-        if (DisableUi.Value){
-            RectTransform temp = __instance.GetComponent<RectTransform>();
-            temp.position = Vector2.up * 2000f;
-        }
-    }
+    //[HarmonyPatch(typeof(UIManager), "Start")]
+    //[HarmonyPrefix]
+    //static void UIOverride(UIManager __instance){
+    //    if (DisableUi.Value){
+    //        RectTransform temp = __instance.GetComponent<RectTransform>();
+    //        temp.position = Vector2.up * 2000f;
+    //    }
+    //}
     
     // Stops the enemy spawn
     [HarmonyPatch(typeof(InvaderSpawner), "SpawnEnemy")]
